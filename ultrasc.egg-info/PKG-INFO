@@ -1,12 +1,28 @@
 Metadata-Version: 2.1
 Name: ultrasc
-Version: 0.1.0
+Version: 0.1.2
 Summary: Simple official client for UltraSC.tk
 Home-page: https://github.com/DmitrijVC/ultrasc-py
 Author: FssAy
 Author-email: FssAy.AF4@protonmail.com
 License: UNKNOWN
 Description: # ultrasc
+        Simple python3 module for uploading images to UltraSC.tk
+        
+        ## Installation
+        **Through pip:** <br>
+        `pip install git+https://github.com/DmitrijVC/ultrasc-py.git#egg=ultrasc`
+        
+        **If you are using PyCharm or venv:** <br>
+        Open CMD in your project folder. <br>
+        Activate your virtual environment `.\venv\Scripts\activate` <br>
+        And use the same command as above  
+        
+        ## Examle
+        ```python
+        
+        ```
+        
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: GPL-3.0 License

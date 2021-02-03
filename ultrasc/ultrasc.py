@@ -1,10 +1,9 @@
 import re
-import asyncio
 import base64
 import requests
 import websockets
 from typing.io import BinaryIO
-from exceptions import *
+from .exceptions import *
 
 ultra_address: str = requests.get("https://pastebin.com/raw/FPzdGWKu").text
 ultra_ws: str = f"ws://{requests.get('https://pastebin.com/raw/8S11wyQQ').text}"
@@ -62,15 +61,18 @@ class Client:
         else:
             raise WsConnectionError(message="WebSocket is already connected, but tried to connect again")
 
+    async def disconnect(self):
+        if self._is_connected:
+            await self.ws.close()
+            self.ws = None
+
     @staticmethod
     def _prepare_payload(title: str, description: str) -> bytes:
         return f"{title}\0{description}\0".encode("utf-8")
 
     async def _send_data(self, payload: str) -> Response:
-        result_raw: str = "error:no response"
-        async with websockets.connect(self.ws_host) as ws:
-            await ws.send(payload)
-            result_raw = await ws.recv()
+        await self.ws.send(payload)
+        result_raw: str = await self.ws.recv()
         return Response(result_raw)
 
     async def send_reader(self, title: str, description: str, file_reader: BinaryIO, close=False) -> Response:
