@@ -1,2 +1,2 @@
-from ultrasc import Client
-from exceptions import *
+from .ultrasc import Client
+from .exceptions import *
