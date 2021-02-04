@@ -29,7 +29,7 @@ class Response:
         if static:
             page = requests.get(url).text
             matches = re.findall(r'data-mfp-src="([\w\S]+)"', page)
-            if matches.__len__() != 0:
+            if matches.__len__() > 0:
                 if matches[0].startswith("images"):
                     return f"https://www.{ultra_address}/{matches[0]}"
                 return matches[0]
