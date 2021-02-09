@@ -1,6 +1,9 @@
 # ultrasc
 Simple python3 module for uploading images to UltraSC.tk
 
+# OUTDATED
+The response changed from `ok:<id>` to `ok:<id>.<stamp>.<key>`
+
 ## Installation
 **Through pip:** <br>
 `pip install git+https://github.com/DmitrijVC/ultrasc-py.git#egg=ultrasc`
