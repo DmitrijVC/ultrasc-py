@@ -2,7 +2,8 @@
 Simple python3 module for uploading images to UltraSC.tk
 
 # OUTDATED
-The response changed from `ok:<id>` to `ok:<id>.<stamp>.<key>`
+The response changed from `ok:<id>` to `ok:<id>.<stamp>.<key>` <br>
+And moved to: https://github.com/Ultra-SC/ultra-py
 
 ## Installation
 **Through pip:** <br>
